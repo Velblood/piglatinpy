@@ -41,7 +41,7 @@ class TestPigLatinTranslator(TestCase):
         translate = translator.translate()
         self.assertEqual("ellohay", translate)
 
-    # def test_translate_word_starting_y(self):
-    #     translator = PigLatinTranslator("y")
-    #     translate = translator.translate()
-    #     self.assertEqual("yay", translate)
+    def test_translate_word_starting_y(self):
+        translator = PigLatinTranslator("y")
+        translate = translator.translate()
+        self.assertEqual("yay", translate)
