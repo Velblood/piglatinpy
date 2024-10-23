@@ -1,3 +1,5 @@
+VOWELS = "aeiou"
+
 class PigLatinTranslator:
 
     def __init__(self, phrase: str):
@@ -25,6 +27,6 @@ class PigLatinTranslator:
         last_letter = self._phrase[-1]
         if last_letter == "y":
             return self._phrase + "nay"
-        if last_letter in "aeiou":
+        if last_letter in VOWELS:
             return self._phrase + "yay"
         return self._phrase + "ay"
