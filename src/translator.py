@@ -1,6 +1,3 @@
-from src.error import PigLatinError
-
-
 class PigLatinTranslator:
 
     def __init__(self, phrase: str):
@@ -23,4 +20,6 @@ class PigLatinTranslator:
         Returns the Pig Latin translation of the phrase.
         :return: the translation.
         """
-        return "nil"
+        if self._phrase == "":
+            return "nil"
+        return self._phrase + "nay"
