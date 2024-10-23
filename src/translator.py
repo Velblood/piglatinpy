@@ -30,7 +30,7 @@ class PigLatinTranslator:
             return "nil"
         starting_letter = self._phrase[0]
         if starting_letter in CONSONANTS:
-            return self._phrase[1:] + starting_letter + "ay"
+            return self._translate_word_starting_consonant()
         elif starting_letter in VOWELS:
             return self._translate_word_starting_vowel()
         raise PigLatinError
@@ -44,3 +44,13 @@ class PigLatinTranslator:
         elif last_letter in CONSONANTS:
             return self._phrase + "ay"
         raise PigLatinError
+
+    def _translate_word_starting_consonant(self):
+        local_phrase = ""
+        for char in self._phrase:
+            if char in CONSONANTS:
+                local_phrase += char
+            else:
+                break
+
+        return self._phrase[len(local_phrase):] + local_phrase + "ay"
