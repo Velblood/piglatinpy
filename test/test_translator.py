@@ -45,3 +45,7 @@ class TestPigLatinTranslator(TestCase):
         translator = PigLatinTranslator("y")
         translate = translator.translate()
         self.assertEqual("yay", translate)
+
+    def test_translate_word_starting_invalid_char(self):
+        translator = PigLatinTranslator("1ay")
+        self.assertRaises(PigLatinError, translator.translate)
